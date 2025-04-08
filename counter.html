@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    body{
+        background-color: rgba(97, 83, 83, 0.9);
+    }
+    #button{
+        display: grid;
+        text-align: center;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        margin-top: 20%;
+
+    }
+    button{
+        border: none;
+        border-radius: 10px;
+        width: 100px;
+        height: 30px;
+        margin: auto;
+        cursor: pointer;
+        color: black; 
+    }
+    #Decrease{
+        margin-right: 2%;
+        margin-top: -10%;
+        color: black;
+        background-color: azure;
+        font-size: large;
+        
+    }
+    #Decrease:active {
+        color: rgb(255, 0, 0); 
+
+    }
+    #Decrease:hover{
+        background-color: salmon;
+    }
+    #Reset{
+        margin: auto;
+        margin-top: -10%;
+        font-size: large;
+    }
+    #Reset:active{
+        background-color: rgb(40, 50, 60);
+    }
+    #Reset:hover{
+        background-color: aliceblue;
+    }
+    #Increase{
+        margin-left: 2%;
+        margin-top: -10%;
+        font-size: large;
+    }
+    #Increase:active{
+        color: green;
+    }
+    #Increase:hover{
+        background-color: springgreen;
+    }
+
+
+
+    #counter{
+        margin: auto;
+        width: 200px;
+        height: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 70px;
+        margin-top: 34%;
+        color: rgb(212, 16, 16);
+    }
+</style>
+<body>
+    <h1 id="counter">0</h1>
+    <div id="button">
+        <button id="Decrease" onclick="dec()">Decrease</button>
+        <button id="Reset" onclick="reset()">Reset</button>
+        <button id="Increase" onclick="inc()">Increase</button>
+    </div>
+    <script>
+        let count = document.getElementById("counter");
+        count.style.color = "rgb(40, 50, 60)";
+
+        function color(){
+            if(count.innerHTML == "0"){
+                document.getElementById("counter").style.color = "rgb(40, 50, 60)";
+            }
+            else if(count.innerHTML > "0"){
+                document.getElementById("counter").style.color = "springgreen";
+            }
+            else{
+                document.getElementById("counter").style.color = "crimson";
+            }
+        }
+        function dec(){
+            count.innerHTML = parseInt(count.innerHTML) - 1;
+            color();
+        }
+        function reset(){
+            count.innerHTML = 0;
+            color();
+        }
+        function inc(){
+            count.innerHTML = parseInt(count.innerHTML) + 1;
+            color();
+        }
+
+    </script>
+</body>
+</html>
